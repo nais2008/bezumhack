@@ -23,6 +23,29 @@
             margin-left: 45%;
         }
 
+        .wheel-container.second {
+            display: none;
+            animation: rotate .4s linear infinite;
+        }
+
+        .crutch {
+            position: relative;
+            height: 400px;
+            margin-top: -1000px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .crutch.broken {
+            display: none;
+        }
+
+        .crutch img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         .wheel-item {
             border: 5px solid black;
             position: absolute;
@@ -74,8 +97,9 @@
 <br>
 <br>v
 
-<div class="header">
+<div class="header" style="display: flex; justify-content: space-between; align-items: center;">
 <a href="#" class="logo"><img src="favicon.png" alt=""></a>
+<a href="#" class="logo"><img src="favicon.jpg" alt=""></a>
 <div class="nav ul li"><a href="/">Главная блять</a></div>
 </div>
 <h1>Привет безумцы! Кто наше Магазин велосипедов</h1>
@@ -114,7 +138,37 @@
     <a href="/14" class="wheel-item" style="animation-delay: 9.1s"><img
             src="велосипед14.jpg" alt="Велосипед 14"></a>
 </div>
-<footer>
+
+<div class="crutch">
+    <img src="костыль.png" alt="Костыль">
+</div>
+
+<div class="wheel-container second">
+    <a href="/crutch1" class="wheel-item" style="animation-delay: 0s"><img
+            src="геометрияяяяя.jpg" alt="Костыльный велосипед 1"></a>
+    <a href="/crutch2" class="wheel-item" style="animation-delay: 0.7s"><img
+            src="костылепед.png" alt="Костыльный велосипед 2"></a>
+    <a href="/crutch3" class="wheel-item" style="animation-delay: 1.4s"><img
+            src="костыльныйвелик.jpg" alt="Костыльный велосипед 3"></a>
+    <a href="/crutch4" class="wheel-item" style="animation-delay: 2.1s"><img
+            src="безумхкабилайк.jpg" alt="Костыльный велосипед 4"></a>
+    <a href="/crutch5" class="wheel-item" style="animation-delay: 2.8s"><img
+            src="велограбли.jpg" alt="Костыльный велосипед 5"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 3.5s"><img
+            src="велосипедколяска.jpg" alt="Костыльный велосипед 6"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 4.9s"><img
+            src="костыльныйвелик.jpg" alt="Костыльный велосипед 6"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 6.3s"><img
+            src="велосипедколяска.jpg" alt="Костыльный велосипед 6"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 7.7s"><img
+            src="безумхкабилайк.jpg" alt="Костыльный велосипед 6"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 9.1s"><img
+            src="велосипедколяска.jpg" alt="Костыльный велосипед 6"></a>
+    <a href="/crutch6" class="wheel-item" style="animation-delay: 10.5s"><img
+            src="геометрияяяяя.jpg" alt="Костыльный велосипед 6"></a>
+</div>
+
+<footer style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
     вот кого надо взять на работу 30000к/нс
     <br>максим
     <br>наис
@@ -137,6 +191,14 @@
         });
         location.reload();
     }
+
+    document.querySelector('.crutch').addEventListener('click', function() {
+        this.classList.add('broken');
+        setTimeout(() => {
+            document.querySelector('.wheel-container').style.display = 'none';
+            document.querySelector('.wheel-container.second').style.display = 'block';
+        }, 500);
+    });
 </script>
 </body>
 </html>
