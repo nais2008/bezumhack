@@ -1,5 +1,5 @@
 import http.server
-
+import urllib
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -7,7 +7,7 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(open("main.html", "rb").read())
         else:
             try:
-                self.wfile.write(open(self.path[1:], "rb").read())
+                self.wfile.write(open(urllib.parse.unquote(self.path[1:],encoding='utf-8'), "rb").read())
             except Exception as e:
                 print("пошёл нахуй", e)
 
