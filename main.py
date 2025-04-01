@@ -25,6 +25,24 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/stopserver":
             self.wfile.write(b"server closed")
             exit(0)
+        elif self.path == "/submitorderform":
+            open("new_file", "w").write(
+                """
+                <h1>Нам насрать на ваши данные. Заполните сами</h1>
+                <audio autoplay="autoplay">
+                    <source src="важный_звонок.mp3" type="audio/mp3">
+                </audio>
+
+                <img src="obezmyana.jpg">
+                <h1>
+                <a href="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
+                https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY
+                </a>
+                </h1>
+                
+                """
+            )
+            self.wfile.write(open("new_file", "rb").read())
         else:
             try:
                 id = int(self.path[1:])
@@ -89,12 +107,13 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                     print("пошёл нахуй", e)
 
     def do_POST(self):
+        счётчик = 1
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         self.wfile.write(b"<p>")
         self.wfile.write(post_data)
         self.wfile.write(
-            b"\nvashe obraschenie razzmatrivaetsya</p><script>setTimeout(() => {window.location.replace('/')}, 5000)</script>")
+            b"\nvashe obraschenie razzmatrivaetsya</p><script>setTimeout(() => {window.location.replace('/submitorderform')}, 200)</script>")
         open("база даннных/" + str(random.random().__hash__()), "wb").write(post_data)
 
 
