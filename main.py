@@ -65,6 +65,17 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                         <input name="monet" type="number" value="сколько ты скинул">
                         <button type="submit"> click me</button>
                     </form>
+                    <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
+        мы
+    </audio>
+                    <script>
+                    audio = document.getElementById("audio");
+    var first = true;
+    document.onclick = function () {'''{
+        if (first == true) audio.play()
+        first = false;}'''
+                }
+                    </script>
                     </body>
                     """)
                 self.wfile.write(
@@ -82,9 +93,23 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)
         self.wfile.write(b"<p>")
         self.wfile.write(post_data)
-        self.wfile.write(b"\nvashe obraschenie razzmatrivaetsya</p><script>setTimeout(() => {window.location.replace('/')}, 5000)</script>")
+        self.wfile.write(
+            b"\nvashe obraschenie razzmatrivaetsya</p><script>setTimeout(() => {window.location.replace('/')}, 5000)</script>")
         open("база даннных/" + str(random.random().__hash__()), "wb").write(post_data)
 
 
-server = http.server.HTTPServer(("localhost", 80), OurHandler)
-server.serve_forever()
+import asyncio
+
+
+async def s1():
+    server = http.server.HTTPServer(("localhost", 80), OurHandler)
+    server.serve_forever()
+
+
+async def s2():
+    server2 = http.server.HTTPServer(("localhost", 1237), http.server.BaseHTTPRequestHandler)
+    server2.serve_forever()
+
+
+asyncio.run(s1())
+asyncio.run(s2())

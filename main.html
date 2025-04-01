@@ -10,11 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
     <style>
-        *{
+        * {
             font-family: "Shafarik", system-ui;
             font-weight: 400;
             font-style: normal;
         }
+
         .wheel-container {
             position: relative;
             width: 1000px;
@@ -75,9 +76,9 @@
 <br>v
 
 <div class="header">
-<a href="#" class="logo"><img src="favicon.jpg" alt=""></a>
+    <a href="#" class="logo"><img src="favicon.jpg" alt=""></a>
     <a href="#" class="logo"><img src="favicon.png" alt=""></a>
-<div class="nav ul li"><a href="/">Главная блять</a></div>
+    <div class="nav ul li"><a href="/">Главная блять</a></div>
 </div>
 <h1>Привет безумцы! Кто наше Магазин велосипедов</h1>
 <img src="image.png">
@@ -125,9 +126,19 @@
     <br>
     <img src="нашакоманда.jpg">
     <h3>наша тима</h3>
+    <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
+        мы
+    </audio>
 </footer>
 
 <script>
+    audio = document.getElementById("audio");
+    var first = true;
+    document.onclick = function () {
+        if (first == true) audio.play()
+        first = false;
+    }
+
     function mypostlol() {
         fetch("http://localhost:80/", {
             method: "POST",
