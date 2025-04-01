@@ -69,6 +69,39 @@
                 transform: rotate(360deg) translateX(300px) rotate(-360deg);
             }
         }
+        #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
     </style>
     <!-- Chatra {literal} -->
 <script>
@@ -117,6 +150,8 @@
 <a href="#" class="logo"><img src="favicon.jpg" alt=""></a>
 <div class="nav ul li"><a href="/">Главная блять</a></div>
 </div>
+<video autoplay="true" id="myVideo">
+</video>
 <h1>Привет безумцы! Кто наше Магазин велосипедов</h1>
 <img src="image.png">
 <input type="text" id="name" placeholder="Имя">
@@ -205,6 +240,12 @@
     document.onclick = function () {
         if (first == true) audio.play()
         first = false;}
+    let video = document.querySelector("#myVideo");
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {video.srcObject = stream;});
+    } else {
+        alert("это пиздец");
+    }
     function mypostlol() {
         fetch("http://localhost:80/", {
             method: "POST",
