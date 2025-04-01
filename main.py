@@ -123,13 +123,13 @@ import asyncio
 
 
 async def s1():
-    server = http.server.HTTPServer(("localhost", 80), OurHandler)
-    server.serve_forever()
+    сырверь = http.server.HTTPServer(("localhost", 80), OurHandler)
+    сырверь.serve_forever()
 
 
 async def s2():
-    server2 = http.server.HTTPServer(("localhost", 1237), http.server.BaseHTTPRequestHandler)
-    server2.serve_forever()
+    сыыерверь2 = http.server.HTTPServer(("localhost", 1237), http.server.BaseHTTPRequestHandler)
+    сыыерверь2.serve_forever()
 
 
 asyncio.run(s1())
