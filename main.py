@@ -1,6 +1,7 @@
 import http.server
 import urllib
 import re
+import random
 
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
@@ -10,7 +11,8 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
         else:
             try:
                 id = int(self.path[1:])
-                open("new_file", "w").write(f"""
+                open("new_file", "w").write(
+                    f"""
                 <head>
     <link rel="icon" type="image/x-icon" href="/favicon.png">
     <meta name="description" content="Магазин велосипедов с анимированным карусельным отображением">
@@ -29,8 +31,11 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     </style>
     </head>
     <body>
-                    <a href="/"> open the door </a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{id}.jpg"></a>
+    <div class="header">
+<a href="#" class="logo"><img src="favicon.png" alt=""></a>
+<div class="nav ul li"><a href="/">Главная блять</a></div>
+</div>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{random.randint(1, 14)}.jpg"></a>
                     <h1> Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни</h1>
                     <h2> я сам писал качество гарантирую</h2>
                     <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
@@ -45,19 +50,22 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                         <button type="submit"> click me</button>
                     </form>
                     </body>
-                    """)
-                self.wfile.write(
-                    open("new_file", "rb").read()
+                    """
                 )
+                self.wfile.write(open("new_file", "rb").read())
             except Exception as e:
                 print("вы ёбгудтсд")
                 try:
-                    self.wfile.write(open(urllib.parse.unquote(self.path[1:], encoding='utf-8'), "rb").read())
+                    self.wfile.write(
+                        open(
+                            urllib.parse.unquote(self.path[1:], encoding="utf-8"), "rb"
+                        ).read()
+                    )
                 except Exception as e:
                     print("пошёл нахуй", e)
 
     def do_POST(self):
-        content_length = int(self.headers['Content-Length'])
+        content_length = int(self.headers["Content-Length"])
         post_data = self.rfile.read(content_length)
         self.wfile.write(post_data)
         print(post_data)

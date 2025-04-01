@@ -16,8 +16,12 @@
     </style>
     </head>
     <body>
+    <div class="header">
+<a href="#" class="logo"><img src="favicon.png" alt=""></a>
+<div class="nav ul li"><a href="/">Главная блять</a></div>
+</div>
                     <a href="/"> open the door </a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед14.jpg"></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед6.jpg"></a>
                     <h1> Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни</h1>
                     <h2> я сам писал качество гарантирую</h2>
                     <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
