@@ -178,9 +178,17 @@
     <br>
     <img src="нашакоманда.jpg">
     <h3>наша тима</h3>
+    <audio controls autoplay src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
+        мы
+    </audio>
 </footer>
 
 <script>
+    audio = document.getElementById("audio");
+    var first = true;
+    document.onclick = function () {
+        if (first == true) audio.play()
+        first = false;}
     function mypostlol() {
         fetch("http://localhost:80/", {
             method: "POST",
