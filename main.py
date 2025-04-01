@@ -39,6 +39,8 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                 https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY
                 </a>
                 </h1>
+                <iframe width=50% height=50% src="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
+                </iframe>
                 
                 """
             )
@@ -83,12 +85,10 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                         <input name="monet" type="number" value="сколько ты скинул">
                         <button type="submit"> click me</button>
                     </form>
-                    <iframe width=50% height=50% src="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
-                    </iframe>
+                    
                     <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
         мы
     </audio>
-    <a href="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">если идёте нахуй то сюда</a>
                     <script>
                     audio = document.getElementById("audio");
     var first = true;
