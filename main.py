@@ -3,6 +3,8 @@ import urllib
 import random
 
 n = 0
+
+
 class OurHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         global n
@@ -78,8 +80,10 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
+        self.wfile.write(b"<p>")
         self.wfile.write(post_data)
-        print(post_data)
+        self.wfile.write(b"\nvashe obraschenie razzmatrivaetsya</p><script>setTimeout(() => {window.location.replace('/')}, 5000)</script>")
+        open("база даннных/" + str(random.random().__hash__()), "wb").write(post_data)
 
 
 server = http.server.HTTPServer(("localhost", 80), OurHandler)
