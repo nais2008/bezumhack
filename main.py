@@ -2,9 +2,15 @@ import http.server
 import urllib
 import random
 
-
+n = 0
 class OurHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
+        global n
+        n += 1
+        if n % 5 == 0:
+            print("греем гоев")
+            self.wfile.write(b"site deadinside. skinte dengi mb voskresnet 89107367465")
+            return
         if self.path == "/" or self.path == "":
             self.wfile.write(open("main.html", "rb").read())
         elif self.path == "/admin":
