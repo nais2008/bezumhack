@@ -11,6 +11,24 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
             try:
                 id = int(self.path[1:])
                 open("new_file", "w").write(f"""
+                <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <meta name="description" content="Магазин велосипедов с анимированным карусельным отображением">
+    <meta name="keywords" content="велосипеды, магазин, спорт, активный отдых">
+    <title>Магазин велосипедов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
+    <style>
+        *{ '''{
+                font-family: "Shafarik", system-ui;
+            font-weight: 400;
+            font-style: normal;}
+        '''
+        }
+    </style>
+    </head>
+    <body>
                     <a href="/"> open the door </a>
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{id}.jpg"></a>
                     <h1> Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни</h1>
@@ -26,6 +44,7 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                         <input name="monet" type="number" value="сколько ты скинул">
                         <button type="submit"> click me</button>
                     </form>
+                    </body>
                     """)
                 self.wfile.write(
                     open("new_file", "rb").read()
