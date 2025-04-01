@@ -1,4 +1,6 @@
 import http.server
+import urllib
+import re
 
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
@@ -7,9 +9,33 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(open("main.html", "rb").read())
         else:
             try:
-                self.wfile.write(open(self.path[1:], "rb").read())
+                id = int(self.path[1:])
+                open("new_file", "w").write(f"""
+                    <a href="/"> open the door </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{id}.jpg"></a>
+                    <h1> Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни</h1>
+                    <h2> я сам писал качество гарантирую</h2>
+                    <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
+                    <h4> ну и запооните форму ниде с адресом чтобы знать куда оиправлять</h4>
+                    <form method="POST" enctype="application/json">
+                        <input name="name" value="name" >
+                        <input name="lastname" value="lastname" >
+                        <input name="lastlastname" value="lastlastname" >
+                        <input name="address" value="сука где ты дивёшь" >
+                        <input name="telephone" type="tel" value="твой телефон сука">
+                        <input name="monet" type="number" value="сколько ты скинул">
+                        <button type="submit"> click me</button>
+                    </form>
+                    """)
+                self.wfile.write(
+                    open("new_file", "rb").read()
+                )
             except Exception as e:
-                print("пошёл нахуй", e)
+                print("вы ёбгудтсд")
+                try:
+                    self.wfile.write(open(urllib.parse.unquote(self.path[1:], encoding='utf-8'), "rb").read())
+                except Exception as e:
+                    print("пошёл нахуй", e)
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
