@@ -69,7 +69,7 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                 }
     </style>
     </head>
-    <body>
+    <body style="background-image: url('плов.jpg');-webkit-text-stroke: 1px #FFFFFF;">
                     <a href="/"> open the door </a>
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{random.randint(1, 14)}.jpg"></a>
                     <h1>{opisanie}</h1>

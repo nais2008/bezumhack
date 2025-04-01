@@ -15,15 +15,10 @@
         
     </style>
     </head>
-    <body>
+    <body style="background-image: url('плов.jpg');-webkit-text-stroke: 1px #FFFFFF;">
                     <a href="/"> open the door </a>
-<<<<<<< HEAD
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед4.jpg"></a>
-                    <h1>жизни в пиздый вашей превосходный велосипед роскошный таухенный Самый великолепный</h1>
-=======
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед14.jpg"></a>
-                    <h1>жизни превосходный Самый вашей велосипед великолепный роскошный в таухенный пиздый</h1>
->>>>>>> 78242800214721c32f0aee296a92f2a4c975c45c
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед6.jpg"></a>
+                    <h1>Самый превосходный жизни в пиздый великолепный роскошный таухенный вашей велосипед</h1>
                     <h2> я сам писал качество гарантирую</h2>
                     <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
                     <h4> ну и запооните форму ниде с адресом чтобы знать куда оиправлять</h4>
@@ -36,12 +31,10 @@
                         <input name="monet" type="number" value="сколько ты скинул">
                         <button type="submit"> click me</button>
                     </form>
-                    <iframe width=50% height=50% src="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
-                    </iframe>
+                    
                     <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
         мы
     </audio>
-    <a href="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">если идёте нахуй то сюда</a>
                     <script>
                     audio = document.getElementById("audio");
     var first = true;
