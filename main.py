@@ -2,14 +2,14 @@ import http.server
 import urllib
 import random
 
-счётчик = 0
+
 
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
+    счётчик = 0
     def do_GET(self):
-        global счётчик
-        счётчик += 1
-        if счётчик % 5 == 0:
+        OurHandler.счётчик += 1
+        if OurHandler.счётчик % 5 == 0 and self.path in ["/", "/admin", ""]:
             print("греем гоев")
             self.wfile.write(b"site deadinside. skinte dengi mb voskresnet 89107367465")
             return
@@ -110,7 +110,6 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                     print("пошёл нахуй", e)
 
     def do_POST(self):
-        счётчик = 1
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         self.wfile.write(b"<p>")
