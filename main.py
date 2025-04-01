@@ -77,25 +77,26 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     </style>
     </head>
     <body style="background-image: url('плов.jpg');">
-                    <a href="/" style="background-color: #fff;"> open the door </a>
+                    <div style="background-color: #fff;">
+                    <a href="/"> open the door </a>
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{random.randint(1, 14)}.jpg"></a>
-                    <h1 style="background-color: #fff;">{opisanie}</h1>
-                    <h2 style="background-color: #fff;"> я сам писал качество гарантирую</h2>
-                    <h3 style="background-color: #fff;"> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
-                    <h4 style="background-color: #fff;"> ну и запооните форму ниде с адресом чтобы знать куда оиправлять</h4>
-                    <form method="POST" enctype="application/json" style="background-color: #fff;">
+                    <h1>{opisanie}</h1>
+                    <h2> я сам писал качество гарантирую</h2>
+                    <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
+                    <h4> ну и запооните форму ниде с адресом чтобы знать куда оиправлять</h4>
+                    <form method="POST" enctype="application/json">
                         <input name="name" value="name" >
                         <input name="lastname" value="lastname" >
                         <input name="lastlastname" value="lastlastname" >
                         <input name="address" value="сука где ты дивёшь" >
                         <input name="telephone" type="tel" value="твой телефон сука">
                         <input name="monet" type="number" value="сколько ты скинул">
-                        <button type="submit"> ПАДТВЕРДИТъ</button>
+                        <button type="submit"> ПаДТВЕРЖАЮ</button>
                     </form>
                     
                     <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
         мы
-    </audio>
+    </audio> </div>
                     <script>
                     audio = document.getElementById("audio");
     var first = true;
