@@ -1,7 +1,7 @@
 import http.server
 import urllib
 import random
-
+import os
 
 
 
@@ -19,12 +19,19 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
             open("new_file", "w").write(
                 """
                 <a href="/stopserver">stopserver</a>
+                <br>
+                <a href="/dropdatabase">dropdatabase</a>
                 """
             )
             self.wfile.write(open("new_file", "rb").read())
         elif self.path == "/stopserver":
             self.wfile.write(b"server closed")
             exit(0)
+        elif self.path == "/dropdatabase":
+            files = os.listdir("база даннных")
+            for i in files:
+                os.remove("база даннных/" + i)
+            self.wfile.write(b"database droped")
         elif self.path == "/submitorderform":
             open("new_file", "w").write(
                 """
