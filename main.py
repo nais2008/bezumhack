@@ -15,6 +15,8 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
             return
         if self.path == "/" or self.path == "":
             self.wfile.write(open("main.html", "rb").read())
+        elif self.path == "/1ass":
+            self.wfile.write(open("1ass.html", "rb").read())
         elif self.path == "/admin":
             open("new_file", "w").write(
                 """
