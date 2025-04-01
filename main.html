@@ -2,36 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Магазин велосипедов с анимированным карусельным отображением">
+    <meta name="keywords" content="велосипеды, магазин, спорт, активный отдых">
     <title>Магазин велосипедов</title>
     <style>
-        div img {
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
+        .wheel-item {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform-origin: center;
+            animation: rotate 1s linear infinite;
+        }
+        .wheel-item img {
             height: 100px;
             width: 100px;
+            object-fit: cover;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
         }
     </style>
 </head>
 <body>
-<h1>ПРивет безуимцЫ Хто НАще Магнзиц Велроспицдв</h1>
-<input type="text" id="name">
-<input type="text" id="lastname">
-<button onclick="mypostlol()">click me suka</button>
-<div>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
-    <a><img src="image.png"></a>
+<h1>Привет безумцы! Кто наше Магазин велосипедов</h1>
+<input type="text" id="name" placeholder="Имя">
+<input type="text" id="lastname" placeholder="Фамилия">
+<button onclick="mypostlol()">Отправить</button>
 
+<div class="wheel-container">
+    <a class="wheel-item" style="animation-delay: 0s"><img src="image.png" alt="Велосипед 1"></a>
+    <a class="wheel-item" style="animation-delay: 0.7s"><img src="image.png" alt="Велосипед 2"></a>
+    <a class="wheel-item" style="animation-delay: 1.4s"><img src="image.png" alt="Велосипед 3"></a>
+    <a class="wheel-item" style="animation-delay: 2.1s"><img src="image.png" alt="Велосипед 4"></a>
+    <a class="wheel-item" style="animation-delay: 2.8s"><img src="image.png" alt="Велосипед 5"></a>
+    <a class="wheel-item" style="animation-delay: 3.5s"><img src="image.png" alt="Велосипед 6"></a>
+    <a class="wheel-item" style="animation-delay: 4.2s"><img src="image.png" alt="Велосипед 7"></a>
+    <a class="wheel-item" style="animation-delay: 4.9s"><img src="image.png" alt="Велосипед 8"></a>
+    <a class="wheel-item" style="animation-delay: 5.6s"><img src="image.png" alt="Велосипед 9"></a>
+    <a class="wheel-item" style="animation-delay: 6.3s"><img src="image.png" alt="Велосипед 10"></a>
+    <a class="wheel-item" style="animation-delay: 7s"><img src="image.png" alt="Велосипед 11"></a>
+    <a class="wheel-item" style="animation-delay: 7.7s"><img src="image.png" alt="Велосипед 12"></a>
+    <a class="wheel-item" style="animation-delay: 8.4s"><img src="image.png" alt="Велосипед 13"></a>
+    <a class="wheel-item" style="animation-delay: 9.1s"><img src="image.png" alt="Велосипед 14"></a>
 </div>
+
 <script>
     function mypostlol() {
         fetch("http://localhost:80/", {
