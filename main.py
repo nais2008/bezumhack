@@ -7,6 +7,16 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/" or self.path == "":
             self.wfile.write(open("main.html", "rb").read())
+        elif self.path == "/admin":
+            open("new_file", "w").write(
+                """
+                <a href="/stopserver">stopserver</a>
+                """
+            )
+            self.wfile.write(open("new_file", "rb").read())
+        elif self.path == "/stopserver":
+            self.wfile.write(b"server closed")
+            exit(0)
         else:
             try:
                 id = int(self.path[1:])
@@ -23,12 +33,12 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
     <style>
-        *{ '''{
+        *{'''{
                 font-family: "Shafarik", system-ui;
             font-weight: 400;
             font-style: normal;}
         '''
-        }
+                }
     </style>
     </head>
     <body>
