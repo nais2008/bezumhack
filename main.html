@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
     <meta charset="UTF-8">
     <title>Магазин велосипедов</title>
+    <style>
+        div img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
-    <h1>ПРивет безуимцЫ Хто НАще Магнзиц Велроспицдв</h1>
-    <input type="text" id="name">
-    <input type="text" id="lastname">
-    <button onclick="mypostlol()">click me suka</button>
-    <script>
+<h1>ПРивет безуимцЫ Хто НАще Магнзиц Велроспицдв</h1>
+<input type="text" id="name">
+<input type="text" id="lastname">
+<button onclick="mypostlol()">click me suka</button>
+<div>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image.png"></a>
+
+</div>
+<script>
     function mypostlol() {
-            fetch("http://localhost:80/", {
-                method: "POST",
-                body: JSON.stringify({
-                    name: document.getElementById("name").value,
-                    lastname: document.getElementById("lastname").value,
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            });
-            location.reload();
-        }
-    </script>
+        fetch("http://localhost:80/", {
+            method: "POST",
+            body: JSON.stringify({
+                name: document.getElementById("name").value,
+                lastname: document.getElementById("lastname").value,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+        location.reload();
+    }
+</script>
 </body>
 </html>
