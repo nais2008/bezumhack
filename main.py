@@ -1,6 +1,6 @@
 import http.server
 import urllib
-import re
+import random
 
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
@@ -10,6 +10,9 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
         else:
             try:
                 id = int(self.path[1:])
+                opisanie = "Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни".split()
+                random.shuffle(opisanie)
+                opisanie = " ".join(opisanie)
                 open("new_file", "w").write(f"""
                 <head>
     <link rel="icon" type="image/x-icon" href="/favicon.png">
@@ -30,8 +33,8 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
     </head>
     <body>
                     <a href="/"> open the door </a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{id}.jpg"></a>
-                    <h1> Самый пиздый таухенный роскошный великолепный превосходный велосипед в вашей жизни</h1>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="велосипед{random.randint(1, 14)}.jpg"></a>
+                    <h1>{opisanie}</h1>
                     <h2> я сам писал качество гарантирую</h2>
                     <h3> отправьте деньги на номер 89107367465 сбер а мы решим досточно ли вы оплатили за велосипед</h3>
                     <h4> ну и запооните форму ниде с адресом чтобы знать куда оиправлять</h4>
