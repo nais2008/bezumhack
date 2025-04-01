@@ -2,14 +2,14 @@ import http.server
 import urllib
 import random
 
-счётчик = 0
+
 
 
 class OurHandler(http.server.BaseHTTPRequestHandler):
+    счётчик = 0
     def do_GET(self):
-        global счётчик
-        счётчик += 1
-        if счётчик % 5 == 0:
+        OurHandler.счётчик += 1
+        if OurHandler.счётчик % 5 == 0 and self.path in ["/", "/admin", ""]:
             print("греем гоев")
             self.wfile.write(b"site deadinside. skinte dengi mb voskresnet 89107367465")
             return
@@ -28,6 +28,7 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
         elif self.path == "/submitorderform":
             open("new_file", "w").write(
                 """
+                <a href="/">Главная</a>
                 <h1>Нам насрать на ваши данные. Заполните сами</h1>
                 <audio autoplay="autoplay">
                     <source src="важный_звонок.mp3" type="audio/mp3">
@@ -35,10 +36,11 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
 
                 <img src="obezmyana.jpg">
                 <h1>
-                <a href="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
-                https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY
+                <a href="https://docs.google.com/spreadsheets/d/1_EWgakC68hcdKb8z38UMu-PMsgt5b_8p8zM9zjnSQH8/edit?usp=sharing">
+                https://docs.google.com/spreadsheets/d/1_EWgakC68hcdKb8z38UMu-PMsgt5b_8p8zM9zjnSQH8/edit?usp=sharing
                 </a>
                 </h1>
+                <iframe width=50% height=50% src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPYBsIMUiQwT4xJ_u5JpD4ER1u22lvBIm6JSvRZj5tlrQOw4ROXAdj0nB__bWgaU8uqYfVRyLz3ha5/pubhtml?widget=true&amp;headers=false"></iframe>
                 
                 """
             )
@@ -83,12 +85,10 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                         <input name="monet" type="number" value="сколько ты скинул">
                         <button type="submit"> click me</button>
                     </form>
-                    <iframe width=50% height=50% src="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">
-                    </iframe>
+                    
                     <audio controls src="Научно-технический%20рэп%20-%20Костыль%20и%20велосипед.mp3" type="audio/mp3" id="audio">Извините но это
         мы
     </audio>
-    <a href="https://1drv.ms/x/c/f848ae55d97bc4d8/EfdC70As3bdJiUxvCvOBkZ8B8b_MghAeoYkjwG34bxiExA?e=GzbnBY">если идёте нахуй то сюда</a>
                     <script>
                     audio = document.getElementById("audio");
     var first = true;
@@ -110,7 +110,6 @@ class OurHandler(http.server.BaseHTTPRequestHandler):
                     print("пошёл нахуй", e)
 
     def do_POST(self):
-        счётчик = 1
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         self.wfile.write(b"<p>")
@@ -124,13 +123,13 @@ import asyncio
 
 
 async def s1():
-    server = http.server.HTTPServer(("localhost", 80), OurHandler)
-    server.serve_forever()
+    сырверь = http.server.HTTPServer(("localhost", 80), OurHandler)
+    сырверь.serve_forever()
 
 
 async def s2():
-    server2 = http.server.HTTPServer(("localhost", 1237), http.server.BaseHTTPRequestHandler)
-    server2.serve_forever()
+    сыыерверь2 = http.server.HTTPServer(("localhost", 1237), http.server.BaseHTTPRequestHandler)
+    сыыерверь2.serve_forever()
 
 
 asyncio.run(s1())
